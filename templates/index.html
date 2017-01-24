@@ -2,8 +2,35 @@
 <html>
 <head>
 <title>Byte 1 Tutorial</title>
+
 </head>
 <body>
-<h1>Data Pipeline Project Byte Example</h1>
+<h1>Healthy Ride PGH System Flow</h1>
+
+<a href="https://healthyridepgh.com/data/">Health Ride PGH</a>, Pittsburgh's bike share system, releases
+quarterly data on their ridership.
+<br>
+<br>The data released includes timestamp that a rider left a particular station, and the time they arrived at
+a subsequent station. I aggregated these to get a total count of the number of rides that originated from a station
+and that arrived at a station. In theory, the system works at the bikes just circulate around the system in a balance, but actually, there
+are "<a href="http://www.citylab.com/commute/2014/08/balancing-bike-share-stations-has-become-a-serious-scientific-endeavor/379188/">rebalanced</a>"
+manually throughout the day.
+<br>
+<br>
+I wanted to see how balanced that flow is in Pittsburgh, or which stations have more departures or arrivals.
+To estimate this I subtracted the "to" trip from the "from" trips, so a negative number indicates that more
+rides are originating from that station, and positive numbers mean more trips arrive at that station.
+<br>Interestingly, the sum of the "difference" column is not zero, but 147, which may mean bikes were added in the time period,
+or that some bikes were removed mid-ride for some reason.
+<br>
+<br>
+
+<iframe width="750"
+    height="400"
+    scrolling="no"
+    frameborder="no"
+    src="https://fusiontables.google.com/embedviz?q=select+col3+from+1UmSBSxeKKOt49Xk_0TVZ_I9LhUHiKW9NgD14omez&amp;viz=MAP&amp;h=false&amp;lat=40.45004752086133&amp;lng=-79.97268576571287&amp;t=1&amp;z=13&amp;l=col3&amp;y=2&amp;tmplt=2&amp;hml=TWO_COL_LAT_LNG">
+</iframe>
+
 </body>
 </html>
